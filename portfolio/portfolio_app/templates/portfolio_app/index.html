@@ -3,8 +3,17 @@
 
 <!-- Replace block content in base_template.html -->
 {% block content %}
-<h1>Computer Science Portfolios</h1>
+<h1>Computer Science Student Portfolios</h1>
+    
+<h2>List of Students with Active Portfolios</h2>
+    <ul class="list-group">
+        {% for i in student_active_portfolios %}
+            <li class="list-group-item text-info bg-dark">Name: <strong class="text-Success"> {{i.name}}</strong>
+                <p class="text-warning"><strong>Portfolio:<a href="{{ i.get_absolute_url }}">{{ i.portfolio.title }}</a>
 
-<h2>More to come from David Klunk</h2>
+                </strong></p>
+            </li>
+        {% endfor %}
+    </ul>
 
 {% endblock %}

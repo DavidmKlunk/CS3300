@@ -14,6 +14,9 @@ class Portfolio(models.Model):
     
     def get_absolute_url(self):
         return reverse("portfolio-detail", args={str(self.id)})
+    
+    def get_projects(self):
+        return Project.objects.select_related('portfolio').all().filter(portfolio=self.id)
 
 class Student(models.Model):
     #List of choice for major value in database, human readable name
@@ -50,5 +53,5 @@ class Project(models.Model):
         return self.title
     
     def get_absolute_url(self):
-        return reverse("project-details", args={str(self.id)})
+        return reverse("project-detail", args={str(self.id)})
     
