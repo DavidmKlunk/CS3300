@@ -6,6 +6,11 @@
 
     <p><strong>Email:</strong> {{ student.email }}</p>
     <p><strong>Major:</strong> {{ student.major }}</p>
-    <p><strong>Portfolio:<a href="{{ student.portfolio.get_absolute_url }}">{{ student.portfolio.title }} </a>
+    <p><strong>Portfolio:
+        <a href="{{ student.portfolio.get_absolute_url }}">{{ student.portfolio.title }} </a>
+        <a href="{{ student.portfolio.get_absolute_url }}/portfolio_form">
+            <!-- This will link to update form-->
+            <button type="button" class="btn btn-warning">Update</button>
+        </a>
    
 {% endblock %}

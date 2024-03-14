@@ -46,7 +46,7 @@ class Student(models.Model):
 
 class Project(models.Model):
     title = models.CharField(max_length=200)
-    description = models.TextField
+    description = models.TextField(blank=True)
     portfolio = models.ForeignKey('Portfolio', on_delete=models.CASCADE)
 
     def __str__(self):

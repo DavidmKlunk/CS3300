@@ -1,0 +1,14 @@
+<!-- Inherit from base -->
+{% extends "portfolio_app/base_template.html" %}
+
+{% block content %}
+    
+    <form action="" method="POST">
+        {% csrf_token %}
+        <table class="text-warning">
+            {{ form.as_table }}
+        </table>
+        <input type="submit" name="Submit">
+    </form>
+
+{% endblock %}

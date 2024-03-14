@@ -9,7 +9,10 @@
     <ul class="list-group">
         {% for i in student_active_portfolios %}
             <li class="list-group-item text-info bg-dark">Name: <strong class="text-Success"> {{i.name}}</strong>
-                <p class="text-warning"><strong>Portfolio:<a href="{{ i.get_absolute_url }}">{{ i.portfolio.title }}</a>
+                <p class="text-warning"><strong>Portfolio: <strong class="text-success">{{ i.portfolio.title }}</strong>
+                    <a href="{{ i.get_absolute_url }}">
+                        <button type="button" class="btn btn-warning">View</button>
+                    </a>
 
                 </strong></p>
             </li>

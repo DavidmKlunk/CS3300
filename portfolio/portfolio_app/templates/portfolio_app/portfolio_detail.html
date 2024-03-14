@@ -2,15 +2,29 @@
 {% extends "portfolio_app/base_template.html" %}
 
 {% block content %}
-    <h1> Title: {{ portfolio.title }} </h1>
+    <h1 class="text-info"> Title: {{ portfolio.title }} </h1>
 
     <p><strong>Portfolio Active:</strong> {{ portfolio.is_active }}</p>
     <p><strong>About:</strong> {{ portfolio.about }}</p>
     <p><strong>Contact Email:</strong> {{ portfolio.contact_email }} </p>
+    <h2 class="text-info"> Projects </h2>
+    <a href = "{{ portfolio.id }}/project_update">
+        <button type="button" class="btn btn-warning">New</button>
+    </a>
     {% for project in portfolio.get_projects %}
-        <li>
-            <p>{{ project.title }}</p>
-        </li>
+        
+        <p>{{ project.title }}</p>
+        <a href = "{{ project.id }}/project_update">
+            <button type="button" class="btn btn-warning">View</button>
+        </a>
+        <a>
+            <button type="button" class="btn btn-warning">Update</button>
+        </a>
+        <a>
+            <button type="button" class="btn btn-warning">Delete</button>
+        </a>
+        
+
     {% endfor %}
    
-{% endblock %}
+{% endblock %} 

@@ -1,0 +1,13 @@
+<!--Inherit from base-->
+{% extends "portfolio_app/base_template.html" %}
+
+<!-- Replace block content -->
+{% block content %}
+    
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="Update">
+    </form>
+
+{% endblock %}
