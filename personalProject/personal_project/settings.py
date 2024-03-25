@@ -37,6 +37,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'functionalStrat',
+    'django_bootstrap5',
+    'embed_video',
+
 ]
 
 MIDDLEWARE = [
@@ -65,6 +69,10 @@ TEMPLATES = [
             ],
         },
     },
+]
+
+TEMPLATE_CONTEXT_PROCESSORS = [
+    'django.template.context_processors.request',
 ]
 
 WSGI_APPLICATION = 'personal_project.wsgi.application'
