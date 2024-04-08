@@ -1,0 +1,34 @@
+{% extends "functionalStrat/base_template.html" %}
+
+{% load embed_video_tags %}
+{% block content %}
+
+<h1 style="font-size:32px"> Strategy Title: {{bossstrat.title}}
+
+</h1>
+
+<p></p>
+
+{%if bossstrat.description%} 
+<p style="font-size:20px"> About: {{bossstrat.description}} </p> 
+{%endif%}
+
+{%if bossstrat.roster%} 
+<p style="font-size:20px"> Roster: {{bossstrat.roster}} </p>
+{%endif%}
+
+{%if bossstrat.video%}
+<p>    {% video bossstrat.video 'small' %} </p>
+{%endif%}
+
+{%if bossstrat.ertNote%}
+<p> ERT Note </p>
+<li> {{bossstrat.ertNote}} </li>
+<p></p>
+{%endif%}
+
+{%if bossstrat.weakaura%}
+    <a href="{{bossstrat.weakaura}}" class="btn btn-dark">View Weakaura </a>
+{%endif%}
+{%endblock%}
+

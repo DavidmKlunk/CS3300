@@ -14,13 +14,13 @@
   </head>
 
  <body style="background-color:#f7feff">
-   <div class="container-fluid">
+   <div class="container-fluid" text-warning bg-dark>
 
      <!-- Navbar-->
-     <nav class="navbar navbar-expand-lg bg-body-tertiary" style="background-clip:content-box;box-shadow: inset 0 0 0 10px #FFF7FE;">
-       <img src="{% static 'images/uccs-signature-email.gif' %}">
+     <nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="background-clip:content-box;box-shadow: inset 0 0 0 10px #FFF7FE;">
+       <img src="{% static 'images/functional.jpg' %}" width="200" height="100">
 
-       <div class="container-fluid" style="background-color:#FFF7FE">
+       <div class="container-fluid" >
          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
            <span class="navbar-toggler-icon"></span>
          </button>
@@ -30,7 +30,7 @@
            <div class="navbar-nav">
              <!--  {% url 'index' %}  is defined in url path to dynamically create url -->
              <a class="nav-link active" aria-current="page" href="{% url 'index' %}">Home</a>
-             <a class="nav-link" href="{% url 'student-list' %}">Current Students</a>
+             <a class="nav-link" href="#">Expansions</a>
              <a class="nav-link" href="#">Menu 3</a>
            </div> <!-- Navbar -->
 

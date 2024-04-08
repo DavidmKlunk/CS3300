@@ -1,0 +1,17 @@
+{% extends "functionalStrat/base_template.html" %}
+
+{% block content %}
+
+<h1 style="font-size:32px"> Expansion: {{expansion.name}}
+
+</h1>
+
+<p></p>
+
+{%for raid in expansion.get_raid %}
+    <li class="list-group-item text-info bg-dark"> Raid: <strong class="text-Success"> {{raid.name}}</strong>
+        <a href="{{raid.get_absolute_url}}" class="btn btn-warning">Bosses </a>
+    </li>
+{%endfor%}
+
+{%endblock%}

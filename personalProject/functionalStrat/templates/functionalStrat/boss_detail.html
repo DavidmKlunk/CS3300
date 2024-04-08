@@ -1,0 +1,18 @@
+{% extends "functionalStrat/base_template.html" %}
+
+{% block content %}
+
+<h1 style="font-size:32px">Boss: {{boss.name}} </h1>
+
+<h2><strong>Strategies</strong><a href="{%url 'create-strat' boss_id=boss.pk %}" class="btn btn-dark">Add a Strategy</a></h2>
+<ul class="list-group">
+    {% for strategy in boss.bossstrat_set.all %}
+        <li style="font-size:20px;background-color:#FEFFF7" class="list-group-item"> Title: {{strategy.title}} <p></p> 
+            <a href="{{strategy.get_absolute_url}}" class="btn btn-dark">View</a>
+            <a href="{%url 'update-strat' strat_id=strategy.pk %}" class="btn btn-dark">Update Strategy</a>
+            <a href="{%url 'delete-strat' strat_id=strategy.pk %}" class="btn btn-dark">Delete Strategy</a>
+        </li>
+    {%endfor%}
+</ul>
+
+{% endblock %}

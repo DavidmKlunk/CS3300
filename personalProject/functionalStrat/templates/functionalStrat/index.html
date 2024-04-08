@@ -1,17 +1,17 @@
 <!-- inherit from base.html-->
-{% extends "portfolio_app/base_template.html" %}
+{% extends "functionalStrat/base_template.html" %}
 
 <!-- Replace block content in base_template.html -->
 {% block content %}
-<h1>Computer Science Portfolios</h1>
+<h1>Functional Boss Strategies</h1>
 
-<h2> List of students with active porfolios </h2>
+<h2> Choose the Expansion </h2>
     <ul class="list-group">
-        
-        <li class="list-group-item" style="background-color:#FEFFF7;font-size:24px"><strong></strong>
-            <p>Portfolio: </p>
+        {% for x in expansions%}
+        <li class="list-group-item" text-info bg-dark"><strong class="text-Success">{{ x.name}}</strong>
+            <a href="{{x.get_absolute_url}}" class="btn btn-dark">View</a>
         </li>
-        
+        {%endfor%}
     </ul>
 
 {% endblock %}

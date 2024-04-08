@@ -1,0 +1,22 @@
+{% extends "functionalStrat/base_template.html" %}
+
+{%block content%}
+
+<!-- Give user information-->
+<h1> Delete Strategy </h1>
+<p style="font-size:24px"> Are you sure you want to delete the project: {{strat.title}} </;p>
+
+<!-- Perform action -->
+<form action="" method="POST">
+    
+    {% csrf_token %}
+    <table>
+        {{ form.as_table }}
+    </table>
+
+    <input type="submit" class="btn btn-primary" name="Submit">
+    <input type="submit" class="btn btn-danger" value="Cancel" name="Cancel">
+
+</form>
+
+{%endblock%}
