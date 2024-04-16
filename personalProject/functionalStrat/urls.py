@@ -1,4 +1,4 @@
-from django.urls import path
+from django.urls import path, include
 from . import views
 
 urlpatterns = [
@@ -10,5 +10,6 @@ urlpatterns = [
     path('strat/<int:pk>', views.BossStratDetailView.as_view(), name='strat-detail'),
     path('expansion/<int:pk>',views.ExpansionDetailView.as_view(), name='expansion-detail'),
     path('raid/<int:pk>',views.RaidDetailView.as_view(),name='raid-detail'),
-    
+    path('accounts/', include('django.contrib.auth.urls')),
+    path('accounts/register/', views.registerPage, name = 'register_page'),
 ]

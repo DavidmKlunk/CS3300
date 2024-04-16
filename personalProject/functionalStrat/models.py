@@ -1,6 +1,7 @@
 from django.db import models
 from django.urls import reverse
 from embed_video.fields import EmbedVideoField
+from django.contrib.auth.models import User
 
 
 class Expansion(models.Model):
@@ -54,7 +55,13 @@ class BossStrat(models.Model):
         return reverse("strat-detail", args=[str(self.id)])
     
 
+class RaidAssist(models.Model):
+    user = models.OneToOneField(User, null=True, on_delete=models.CASCADE)
 
+class RaidLeader(models.Model):
+    user = models.OneToOneField(User, null=True, on_delete=models.CASCADE)
 
+class RaidMember(models.Model):
+    user = models.OneToOneField(User, null=True, on_delete=models.CASCADE)
 
 
