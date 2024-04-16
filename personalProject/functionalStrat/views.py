@@ -97,7 +97,8 @@ def updateStrat(request, strat_id):
         
     context = {'form': form}
     return render(request, 'functionalStrat/update_create_form.html', context)
-
+@login_required(login_url='login')
+@allowed_users(allowed_roles=['raid_leader'])
 def deleteStrat(request, strat_id):
     strat = BossStrat.objects.get(pk=strat_id)
 
