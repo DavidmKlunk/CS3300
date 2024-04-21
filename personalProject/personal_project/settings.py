@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'django_bootstrap5',
     'embed_video',
     'rolepermissions',
+    'oauth2_provider',
 
 ]
 

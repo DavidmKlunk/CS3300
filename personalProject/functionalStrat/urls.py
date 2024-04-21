@@ -12,4 +12,5 @@ urlpatterns = [
     path('raid/<int:pk>',views.RaidDetailView.as_view(),name='raid-detail'),
     path('accounts/', include('django.contrib.auth.urls')),
     path('accounts/register/', views.registerPage, name = 'register_page'),
+    path('o/', include('oauth2_provider.urls', namespace='oauth2_provider')),
 ]
